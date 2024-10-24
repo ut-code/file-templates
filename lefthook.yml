@@ -1,5 +1,7 @@
 # Lefthook: Precommit Hook
 # docs: https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+# 必須: Lefthook
+# 必須: `lefthook install`
 # 関連: Husky (同機能)
 pre-commit:
   parallel: true
