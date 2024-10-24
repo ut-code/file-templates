@@ -38,8 +38,8 @@
 一部のファイルは、リポジトリごとにコピー時に編集が必要です。
 編集が必要な場所には、以下の HTML 風の注意書きがあります。それにしたがって編集してください。
 
-<TEMPLATE
-  replace | optional | repeat // `replace` は<TEMPLATE />タグをそのまま置き換えするもの、 `optional` は必須ではないもの、 `repeat` は複数個指定できるもの
+<template
+  replace | optional | repeat // `replace` は<template />タグをそのまま置き換えするもの、 `optional` は必須ではないもの、 `repeat` は複数個指定できるもの
   example: string // 例。だいたいカンマ区切り。
   desc?: string // 説明。自明でない場合。
 />
@@ -49,18 +49,18 @@
 # GitHub Actions を用いた CI
 # docs: https://docs.github.com/ja/actions/about-github-actions/about-continuous-integration-with-github-actions
 on:
-  - pull_request: # <TEMPLATE optional /> -> この行は必須ではない。
-  - push: # <TEMPLATE optional />
+  - pull_request: # <template optional /> -> この行は必須ではない。
+  - push: # <template optional />
     - branches:
-      # <TEMPLATE repeat example="- main,- release" desc="プッシュしたときにCIを実行したいブランチ" />
+      # <template repeat example="- main,- release" desc="プッシュしたときにCIを実行したいブランチ" />
       - master
 jobs:
-  # <TEMPLATE repeat example="format:..." desc="実行したい CI" />
+  # <template repeat example="format:..." desc="実行したい CI" />
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      # <TEMPLATE repeat example="- uses: actions/setup-node@v4, - run: npm run build" desc="各ステップで使うもの/実行するコマンド"/>
+      # <template repeat example="- uses: actions/setup-node@v4, - run: npm run build" desc="各ステップで使うもの/実行するコマンド"/>
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
