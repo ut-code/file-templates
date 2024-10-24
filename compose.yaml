@@ -1,0 +1,5 @@
+# Docker Compose: Virtualization
+# doc: https://docs.docker.jp/compose/compose-file/compose-file-v3.html#id56
+# 必須: docker
+# 必須: Dockerfile
+# TODO!
