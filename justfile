@@ -1,8 +1,13 @@
 # Just: Just a command runner
 # GitHub: https://github.com/casey/just
 # 必須: just (exec)
-# 関連: GNU Make / Makefile (同機能)
+# 関連: GNU Make / Makefile (ほぼ同機能)
 default: watch
+
+# Setup
+setup: setup-root setup-sample
+setup-root:
+    lefthook install # bunx husky # ... choose one
 
 # Watch
 watch:
@@ -17,6 +22,8 @@ build: build-sample
 test: test-sample
 
 # Sample-Program
+setup-sample:
+    cd sample-program; bun install --frozen-lockfile
 watch-sample:
     cd sample-program; bun watch
 build-sample:
