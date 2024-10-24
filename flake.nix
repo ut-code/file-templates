@@ -33,6 +33,7 @@
         buildInputs = with pkgs; [
           # <template repeat desc="開発中に使うパッケージ" example="biome" />
           bun
+          just
           biome
           lefthook
         ];

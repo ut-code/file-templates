@@ -3,11 +3,12 @@
 	"module": "main.ts",
 	"type": "module",
 	"scripts": {
-		"start": "bun src/main.ts",
 		"watch": "bun src/main.ts --watch",
 		"build": "bunx tsc",
 		"serve": "bun target/main.js",
-		"test:bun": "bun test"
+		"test:all": "bun run test:bun && bun run test:another",
+		"test:bun": "bun test",
+		"test:another": "echo 'ok'; exit 0"
 	},
 	"devDependencies": {
 		"@types/bun": "latest"
