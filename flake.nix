@@ -32,6 +32,7 @@
         name = "Template Development Shell"; # devShell の名前
         buildInputs = with pkgs; [
           # <template repeat desc="開発中に使うパッケージ" example="biome" />
+          bun
           biome
           lefthook
         ];

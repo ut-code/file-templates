@@ -1,0 +1,18 @@
+{
+	"name": "sample-program",
+	"module": "main.ts",
+	"type": "module",
+	"scripts": {
+		"start": "bun src/main.ts",
+		"watch": "bun src/main.ts --watch",
+		"build": "bunx tsc",
+		"serve": "bun target/main.js",
+		"test:bun": "bun test"
+	},
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
+}
