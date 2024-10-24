@@ -36,7 +36,7 @@ jobs:
 
   # ここでは Biome を使っている。 https://biomejs.dev/ja/recipes/continuous-integration/
   # Prettier / Eslint も調べたら出てくるはず。 
-  code-style: 
+  code-style:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -48,7 +48,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
-      - run: bun test
+      - run: bun run test:bun
+        working-directory: sample-program
 
   cache-sample:
     runs-on: ubuntu-latest
