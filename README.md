@@ -1,4 +1,4 @@
-注: この README はサンプルの README です。このリポジトリ自体の README は、 (self.README.md)[https://github.com/ut-code/file-samples/blob/main/self.README.md] を参照してください。
+注: この README はサンプルの README です。このリポジトリ自体の README は、 [self.README.md](self.README.md) を参照してください。
 
 <!-- このファイルは好きなように編集してください。以下に一例を示します。 -->
 
