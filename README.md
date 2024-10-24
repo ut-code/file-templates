@@ -24,5 +24,18 @@
   - Biome
   - Just
 
-### 開発環境で実行
-### PR の前に
+### 開発環境で実行 (watch モード)
+
+```sh
+just watch
+```
+
+### デプロイ方法
+
+sample:
+```sh
+# Setup Command
+just build-sample 
+# Serve Command
+just serve-sample
+```

@@ -2,7 +2,8 @@
 
 # Husky: pre commit
 # doc: https://typicode.github.io/husky/
-# 関連: Lefthook (同機能)
+# Init Command: `bunx husky`
+# 関連: Lefthook (互換: lefthook のほうが多機能)
 
 cd "$(dirname "$0")"; cd ..
 

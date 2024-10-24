@@ -1,6 +1,7 @@
 # Nix Flake: 依存関係を統一的に管理し、バ＝ジョンを固定する。
 # Nix 公式はドキュメントなんて丁寧なものを書いてくれないので、適当な Zenn の記事読み漁るか Youtube で Nix 人の動画見るかして勉強してください。
 
+# Init Command: `nix flake init`
 # 必須: flake.lock
 # 推奨: .envrc
 {

@@ -1,6 +1,6 @@
 # Just: Just a command runner
 # GitHub: https://github.com/casey/just
-# 必須: just (exec)
+# 必須: just (executable)
 # 関連: GNU Make / Makefile (ほぼ同機能)
 default: watch
 
@@ -26,9 +26,10 @@ setup-sample:
     cd sample-program; bun install --frozen-lockfile
 watch-sample:
     cd sample-program; bun watch
-build-sample:
+# setup-sample is required for deploy, and better for development (to prevent dependency desync)
+build-sample: setup-sample
     cd sample-program; bun run build
-exec-sample:
+serve-sample:
     cd sample-program; bun target/main.js
 test-sample:
     cd sample-program; bun test:all
