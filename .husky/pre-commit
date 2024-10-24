@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Husky: pre commit
+# doc: https://typicode.github.io/husky/
+# 関連: Lefthook (同機能)
+
+cd "$(dirname "$0")"; cd ..
+
+biome check .
