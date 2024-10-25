@@ -12,12 +12,14 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     prisma-utils.url = "github:VanCoding/nix-prisma-utils";
+    fenix.url = "github:nix-community/fenix";
   };
 
-  outputs = { nixpkgs, flake-utils, prisma-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
+  outputs = { nixpkgs, flake-utils, prisma-utils, fenix, ... }: flake-utils.lib.eachDefaultSystem (system:
     let
       pkgs = import nixpkgs { inherit system; };
       prisma = import ./prisma { inherit prisma-utils pkgs; };
+      toolchain = import ./rust { inherit system fenix; };
     in
     {
       # パッケージの設定
@@ -33,12 +35,14 @@
       # 開発シェルの設定
       devShell = pkgs.mkShell {
         name = "Template Development Shell"; # devShell の名前
+        src = ./.;
         buildInputs = with pkgs; [
           # <template repeat desc="開発中に使うパッケージ" example="biome" />
           bun
           just
           biome
           lefthook
+          toolchain
         ];
 
         # 開発環境に入ったときに実行するシェルフック。
