@@ -7,7 +7,7 @@ on:
   pull_request:
   push:
     branches:
-	# <template repeat />
+    # <template repeat />
     - main
 
 # <template optional desc="CI 全体で使う環境変数" />
@@ -19,8 +19,7 @@ env:
 # <template optional desc="全 job の使うデフォルト" />
 defaults:
   run:
-    env:
-      IS_CI: "true"
+    working-directory: .
 
 jobs:
   # <template repeat desc="複数の CI ジョブを指定可能: 各ジョブの環境は分離される" />
