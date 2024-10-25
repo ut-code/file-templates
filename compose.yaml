@@ -7,10 +7,16 @@ services:
     build:
       context: basic-program/ # context の外のファイルにはアクセスできない。
       dockerfile: ./Dockerfile # context からの相対パス
+
+  prisma:
+    build:
+      context: prisma/
     environment:
       # docker-compose 内の別のサービスにアクセスするときは、 ホスト名が localhost ではなくそのサービスの名前になるので注意。
       # (ここでは postgres)                     ________ これ
       DATABASE_URL: "postgresql://user:password@postgres:5432/database"
+    ports:
+      - "5555:5555" # YAML base 60 float との衝突を避けるため、"" で囲うべき: https://docs.docker.jp/compose/compose-file/index.html#compose-spec-ports-short-syntax
     depends_on:
       postgres:
         # condition を指定しないと、 depends_on は起動順を指定するのみ。
