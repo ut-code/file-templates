@@ -9,7 +9,7 @@
 
 # to use this, change .env:DATABASE_URL to
 # DATABASE_URL=postgres://user:password@localhost:5432/database
-docker run --rm --name postgres -p 5432:5432 \
+docker run --rm -d --name postgres -p 5432:5432 \
   -e POSTGRES_PASSWORD=password \
   -e POSTGRES_USER=user \
   -e POSTGRES_DB=database \

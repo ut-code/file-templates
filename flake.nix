@@ -11,11 +11,13 @@
     # <template repeat desc="outputs の引数に入る入力のリスト" example="fenix.url=\"...\"" />
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    prisma-utils.url = "github:VanCoding/nix-prisma-utils";
   };
 
-  outputs = { nixpkgs, flake-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
+  outputs = { nixpkgs, flake-utils, prisma-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
     let
       pkgs = import nixpkgs { inherit system; };
+      prisma = import ./prisma { inherit prisma-utils pkgs; };
     in
     {
       # パッケージの設定
@@ -44,7 +46,7 @@
           # <template repeat example="export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${pkgs.stdenv.cc.cc.lib}/lib" />
           lefthook install
           # bunx husky # ... enable either lefthook or husky
-        '';
+        '' + prisma.shellHook;
       };
     });
 }

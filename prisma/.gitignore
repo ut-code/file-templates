@@ -13,6 +13,3 @@ target
 .astro
 .next
 .svelte-kit
-
-# Direnv を使う場合。
-/.direnv
