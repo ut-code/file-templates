@@ -3,9 +3,9 @@
 # 必須: docker
 # 必須: Dockerfile
 services:
-  sample:
+  basic-program:
     build:
-      context: sample-program/ # context の外のファイルにはアクセスできない。
+      context: basic-program/ # context の外のファイルにはアクセスできない。
       dockerfile: ./Dockerfile # context からの相対パス
     environment:
       # docker-compose 内の別のサービスにアクセスするときは、 ホスト名が localhost ではなくそのサービスの名前になるので注意。

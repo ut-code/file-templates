@@ -1,5 +1,5 @@
 {
-	"name": "sample-program",
+	"name": "basic-program",
 	"module": "main.ts",
 	"type": "module",
 	"scripts": {

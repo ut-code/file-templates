@@ -5,31 +5,31 @@
 default: watch
 
 # Setup
-setup: setup-root setup-sample
+setup: setup-root setup-basic
 setup-root:
     lefthook install # bunx husky # ... choose one
 
 # Watch
 watch:
     trap 'kill 0' EXIT; \
-        just watch-sample & \
+        just watch-basic & \
         wait
 
 # Build All
-build: build-sample
+build: build-basic
 
 # Test
-test: test-sample
+test: test-basic
 
-# Sample-Program
-setup-sample:
-    cd sample-program; bun install --frozen-lockfile
-watch-sample:
-    cd sample-program; bun watch
-# setup-sample is required for deploy, and better for development (to prevent dependency desync)
-build-sample: setup-sample
-    cd sample-program; bun run build
-serve-sample:
-    cd sample-program; bun target/main.js
-test-sample:
-    cd sample-program; bun test:all
+# Basic-Program
+setup-basic:
+    cd basic-program; bun install --frozen-lockfile
+watch-basic:
+    cd basic-program; bun watch
+# setup-basic is required for deploy, and better for development (to prevent dependency desync)
+build-basic: setup-basic
+    cd basic-program; bun run build
+serve-basic:
+    cd basic-program; bun target/main.js
+test-basic:
+    cd basic-program; bun test:all

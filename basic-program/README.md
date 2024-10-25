@@ -1,4 +1,4 @@
-# sample-program
+# basic-program
 
 To install dependencies:
 

@@ -37,7 +37,7 @@ just watch
 sample:
 ```sh
 # Setup Command
-just build-sample 
+just build-basic
 # Serve Command
-just serve-sample
+just serve-basic
 ```

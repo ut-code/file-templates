@@ -5,7 +5,7 @@
 
 # TIP: latest is discouraged. change `latest` to the latest locked version of the image (example: `oven/bun:1.1.33`)
 FROM oven/bun:latest
-WORKDIR /sample-program
+WORKDIR /basic-program
 COPY package.json bun.lockb ./
 RUN bun install --frozen-lockfile
 COPY . ./
