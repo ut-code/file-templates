@@ -18,6 +18,7 @@
 
 - Nix と direnv をインストールします。
 - このディレクトリで、 `direnv allow` を実行します。
+- Docker をインストールします。
 
 2. それ以外
 
@@ -25,6 +26,8 @@
   - Bun
   - Biome
   - Just
+  - lefthook
+  - Docker
 
 ### 開発環境で実行 (watch モード)
 
@@ -34,7 +37,7 @@ just watch
 
 ### デプロイ方法
 
-sample:
+basic program:
 ```sh
 # Setup Command
 just build-basic
