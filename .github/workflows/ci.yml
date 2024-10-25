@@ -26,6 +26,9 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     timeout-minutes: 10 # <template optional />
+    defaults: # <template optional />
+      run: 
+        working-directory: basic-program
     steps:
       # <template repeat desc="このジョブのステップ: 各ステップは同一環境で順番に実行される"/>
       - uses: actions/checkout@v4
@@ -39,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: biomejs/setup-biome@v4
+      - uses: biomejs/setup-biome@v2
       - run: biome check
 
   test:
