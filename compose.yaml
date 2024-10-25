@@ -2,4 +2,29 @@
 # doc: https://docs.docker.jp/compose/compose-file/compose-file-v3.html#id56
 # 必須: docker
 # 必須: Dockerfile
-# TODO!
+services:
+  sample:
+    build:
+      context: sample-program/ # context の外のファイルにはアクセスできない。
+      dockerfile: ./Dockerfile # context からの相対パス
+    environment:
+      # docker-compose 内の別のサービスにアクセスするときは、 ホスト名が localhost ではなくそのサービスの名前になるので注意。
+      # (ここでは postgres)                     ________ これ
+      DATABASE_URL: "postgresql://user:password@postgres:5432/database"
+    depends_on:
+      postgres:
+        # condition を指定しないと、 depends_on は起動順を指定するのみ。
+        condition: service_healthy
+
+  # https://hub.docker.com/_/postgres
+  postgres:
+    image: "postgres:latest"
+    environment:
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "database"
+    healthcheck:
+      test: "pg_isready -h localhost -U user -d database"
+      retries: 5
+      interval: 3s
+
