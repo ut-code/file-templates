@@ -29,6 +29,9 @@
   - lefthook
   - Docker
 
+- 以下のコマンドを実行してください。
+  - `lefthook install`
+
 ### 開発環境で実行 (watch モード)
 
 ```sh
