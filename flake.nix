@@ -19,7 +19,7 @@
     let
       pkgs = import nixpkgs { inherit system; };
       prisma = import ./prisma { inherit prisma-utils pkgs; };
-      toolchain = import ./rust { inherit system fenix; };
+      toolchain = import ./rust-app { inherit system fenix; };
     in
     {
       # パッケージの設定
