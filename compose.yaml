@@ -1,8 +1,9 @@
 # Docker Compose: Virtualization
 # doc: https://docs.docker.jp/compose/compose-file/compose-file-v3.html#id56
 # 必須: docker
-# 必須: Dockerfile
+# 必須: **/Dockerfile
 services:
+  # <template repeat desc="Compose で管理する Docker インスタンス" />
   basic-program:
     build:
       context: basic-program/ # context の外のファイルにはアクセスできない。
@@ -33,4 +34,3 @@ services:
       test: "pg_isready -h localhost -U user -d database"
       retries: 5
       interval: 3s
-
