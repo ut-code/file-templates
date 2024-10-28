@@ -9,8 +9,14 @@
 
 # to use this, change .env:DATABASE_URL to
 # DATABASE_URL=postgres://user:password@localhost:5432/database
+
+# to kill this database, run `docker stop postgres` (for graceful shutdown) or `docker kill postgres` (for force kill)
 docker run --rm -d --name postgres -p 5432:5432 \
   -e POSTGRES_PASSWORD=password \
   -e POSTGRES_USER=user \
   -e POSTGRES_DB=database \
   postgres:latest
+
+until docker exec postgres pg_isready -h localhost -U user -d database; do
+  sleep 1
+done
