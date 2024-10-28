@@ -1,0 +1,25 @@
+{
+	"name": "hono-zod-openapi",
+	"module": "main.ts",
+	"type": "module",
+	"scripts": {
+		"push": "bunx drizzle-kit push",
+		"start": "bun src/main.ts",
+		"watch": "bun src/main.ts --watch"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"@types/pg": "^8.11.10",
+		"drizzle-kit": "^0.26.2"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@hono/swagger-ui": "^0.4.1",
+		"@hono/zod-openapi": "^0.16.4",
+		"dotenv": "^16.4.5",
+		"drizzle-orm": "^0.35.3",
+		"pg": "^8.13.1"
+	}
+}
