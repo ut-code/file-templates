@@ -10,6 +10,7 @@ use poem_openapi::{
 
 struct Api;
 
+// See more examples here: https://github.com/poem-web/poem/blob/master/examples/openapi/users-crud/src/main.rs
 #[OpenApi]
 impl Api {
     #[oai(path = "/todos", method = "get")]
