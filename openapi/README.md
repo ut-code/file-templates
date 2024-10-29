@@ -1,12 +1,23 @@
 # OpenAPI sample via To Do App
 
+## How To Run
+
+実行コマンド:
+
+共通: `database/up.sh`
+hono-zod-openapi: `cd hono-zod-openapi && bun push && bun start)`
+poem-openapi: `cd poem-openapi && cargo run`
+終わったら: `database/drop.sh`
+
+どちらも、localhost:3000/docs で Swagger UI が見れます。
+
 ```yaml
 schema:
 - todo:
     title: string UNIQUE MAX(255B)
     content: string
     created_at: Date
-    completed_at: Date CAN NULL
+    completed_at: Date NULL
 
 endpoints:
 - GET /api/todos:
