@@ -10,6 +10,40 @@
 
 ファイルをコピーし、ファイルに書いてあるように編集します。
 
+## 技術スタック
+
+- Frontend
+  - None
+
+- Backend
+  - JavaScript
+    - Bun ([Website](https://bun.sh/))
+    - Hono ([Website](https://hono.dev/))
+    - Prisma ([Website](https://www.prisma.io/))
+  - Rust
+    - Cargo
+    - Poem ([GitHub](https://github.com/poem-web/poem))
+    - SQLx ([GitHub](https://github.com/launchbadge/sqlx))
+
+- Database
+  - Postgres ([Website](https://www.postgresql.org/)) on Docker
+
+- Infrastructure
+  - Nix Flake
+    - Flake Utils ([GitHub](https://github.com/numtide/flake-utils))
+    - Fenix ([GitHub](https://github.com/nix-community/fenix))
+    - Prisma Utils ([GitHub](https://github.com/VanCoding/nix-prisma-utils))
+  - Docker ([Website](https://www.docker.com/ja-jp/))
+    - Docker Compose ([Website](https://docs.docker.com/compose/))
+
+- Development
+  - API Doc: OpenAPI
+  - Task Runner: Just ([GitHub](https://github.com/casey/just))
+  - Precommit: Lefthook ([GitHub](https://github.com/evilmartians/lefthook))
+  - Formatter / Linter: Biome ([Website](https://biomejs.dev/ja/))
+  - Watcher: cargo-watch ([GitHub](https://github.com/watchexec/cargo-watch))
+  - Watcher: Bun `bun --watch`
+  
 ## 開発
 
 ### 環境構築
