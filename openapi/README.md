@@ -1,4 +1,4 @@
-# OpenAPI sample via To Do App
+# OpenAPI + Database sample via To Do App
 
 ## How To Run
 
