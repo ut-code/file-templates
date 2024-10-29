@@ -43,6 +43,7 @@
           biome
           lefthook
           toolchain
+          cargo-watch
         ];
 
         # 開発環境に入ったときに実行するシェルフック。

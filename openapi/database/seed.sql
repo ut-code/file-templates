@@ -2,8 +2,8 @@ CREATE TABLE todos (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) UNIQUE NOT NULL CHECK (LENGTH(title) > 3),
     content TEXT NOT NULL,
-    created_at Timestamp NOT NULL,
-    completed_at Timestamp NULL,
+    created_at Timestamp with time zone NOT NULL,
+    completed_at Timestamp with time zone NULL,
     CHECK (completed_at > created_at)
 );
 
