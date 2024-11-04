@@ -50,7 +50,6 @@
         shellHook = ''
           # <template repeat example="export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${pkgs.stdenv.cc.cc.lib}/lib" />
           lefthook install
-          # bunx husky # ... enable either lefthook or husky
         '' + prisma.shellHook;
       };
     });

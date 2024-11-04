@@ -7,7 +7,7 @@ default: watch
 # Setup
 setup: setup-root setup-basic
 setup-root:
-    lefthook install # bunx husky # ... choose one
+    lefthook install
 
 # Watch
 watch:
