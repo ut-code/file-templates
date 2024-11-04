@@ -7,8 +7,8 @@ on:
   pull_request:
   push:
     branches:
-    # <template repeat />
-    - main
+      # <template repeat />
+      - main
 
 # <template optional desc="CI 全体で使う環境変数" />
 env:
@@ -23,11 +23,11 @@ defaults:
 
 jobs:
   # <template repeat desc="複数の CI ジョブを指定可能: 各ジョブの環境は分離される" />
-  build: 
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 10 # <template optional />
     defaults: # <template optional />
-      run: 
+      run:
         working-directory: basic-program
     steps:
       # <template repeat desc="このジョブのステップ: 各ステップは同一環境で順番に実行される"/>
@@ -37,7 +37,7 @@ jobs:
       - run: bun run build
 
   # ここでは Biome を使っている。 https://biomejs.dev/ja/recipes/continuous-integration/
-  # Prettier / Eslint も調べたら出てくるはず。 
+  # Prettier / Eslint も調べたら出てくるはず。
   code-style:
     runs-on: ubuntu-latest
     steps:

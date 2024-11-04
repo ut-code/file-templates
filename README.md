@@ -57,6 +57,7 @@
 2. それ以外
 
 - 以下のパッケージをインストールしてください。
+
   - Bun
   - Biome
   - Just
@@ -75,6 +76,7 @@ just watch
 ### デプロイ方法
 
 basic program:
+
 ```sh
 # Setup Command
 just build-basic

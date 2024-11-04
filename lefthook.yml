@@ -8,8 +8,13 @@ pre-commit:
   commands:
     biome:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      # このコードベースではフォーマッタに Prettier を採用しているので `biome lint` しかしていないが、 Biome で format もするなら `biome check` をしてよい。 (biome check = biome lint + biome format)
+      run: biome format --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
       stage_fixed: true
     # main でコミットできないようにするには、下のコメントアウトを消す。
     # prevent-commit-on-main:
     #   run: if [ "`git branch --show-current`" == 'main' ]; then echo 'Cannot make commit on main!'; exit 1; fi
+    prettier:
+      glob: "*"
+      run: bunx prettier . --write
+      stage_fixed: true

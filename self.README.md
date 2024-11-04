@@ -51,21 +51,22 @@
 編集が必要な場所には、以下の HTML 風の注意書きがあります。それにしたがって編集してください。
 
 <template
-  replace | optional | repeat // `replace` はそのまま置き換えるもの、 `optional` は必須ではないもの、 `repeat` は複数個指定できるもの
-  example: string // 例。だいたいカンマ区切り。
-  desc?: string // 説明。自明でない場合。
+replace | optional | repeat // `replace` はそのまま置き換えるもの、 `optional` は必須ではないもの、 `repeat` は複数個指定できるもの
+example: string // 例。だいたいカンマ区切り。
+desc?: string // 説明。自明でない場合。
 />
 
 ## 例
+
 ```yml name=".github/workflows/ci.yml"
 # GitHub Actions を用いた CI
 # docs: https://docs.github.com/ja/actions/about-github-actions/about-continuous-integration-with-github-actions
 on:
   - pull_request: # <template optional /> -> この行は必須ではない。
   - push: # <template optional />
-    - branches:
-      # <template repeat example="- main,- release" desc="プッシュしたときにCIを実行したいブランチ" />
-      - master
+      - branches:
+          # <template repeat example="- main,- release" desc="プッシュしたときにCIを実行したいブランチ" />
+          - master
 jobs:
   # <template repeat example="format:..." desc="実行したい CI" />
   build:

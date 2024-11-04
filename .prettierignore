@@ -1,0 +1,3 @@
+# Prettier ignore
+# .gitignore に含まれるものは自動で無視するので、それ以外。
+flake.lock

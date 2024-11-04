@@ -1,16 +1,16 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"files": {
-		"ignore": [
-			"**/node_modules",
-			"**/dist",
-			"**/target",
-			"**/build",
-			".docusaurus",
-			".astro",
-			".next",
-			".svelte-kit",
-			".direnv"
-		]
-	}
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "files": {
+    "ignore": [
+      "**/node_modules",
+      "**/dist",
+      "**/target",
+      "**/build",
+      ".docusaurus",
+      ".astro",
+      ".next",
+      ".svelte-kit",
+      ".direnv"
+    ]
+  }
 }
