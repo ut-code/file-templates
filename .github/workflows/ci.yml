@@ -37,13 +37,20 @@ jobs:
       - run: bun run build
 
   # ここでは Biome を使っている。 https://biomejs.dev/ja/recipes/continuous-integration/
-  # Prettier / Eslint も調べたら出てくるはず。
-  code-style:
+  # Eslint も調べたら出てくるはず。
+  lint-with-biome:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: biomejs/setup-biome@v2
       - run: biome check
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bunx prettier . --check
 
   test:
     runs-on: ubuntu-latest
