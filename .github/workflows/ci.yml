@@ -43,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: biomejs/setup-biome@v2
-      - run: biome check
+      - run: biome lint
   prettier:
     runs-on: ubuntu-latest
     steps:
