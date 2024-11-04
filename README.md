@@ -13,9 +13,11 @@
 ## 技術スタック
 
 - Frontend
+
   - None
 
 - Backend
+
   - JavaScript
     - Bun ([Website](https://bun.sh/))
     - Hono ([Website](https://hono.dev/))
@@ -26,9 +28,11 @@
     - SQLx ([GitHub](https://github.com/launchbadge/sqlx))
 
 - Database
+
   - Postgres ([Website](https://www.postgresql.org/)) on Docker
 
 - Infrastructure
+
   - Nix Flake
     - Flake Utils ([GitHub](https://github.com/numtide/flake-utils))
     - Fenix ([GitHub](https://github.com/nix-community/fenix))
@@ -43,7 +47,7 @@
   - Formatter / Linter: Biome ([Website](https://biomejs.dev/ja/))
   - Watcher: cargo-watch ([GitHub](https://github.com/watchexec/cargo-watch))
   - Watcher: Bun `bun --watch`
-  
+
 ## 開発
 
 ### 環境構築

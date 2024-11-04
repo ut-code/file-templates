@@ -7,7 +7,7 @@ import route_todos from "./routes/todos.get";
 import route_post_todos from "./routes/todos.post";
 
 const db = drizzle(
-	process.env.DATABASE_URL || panic("env DATABASE_URL not found"),
+  process.env.DATABASE_URL || panic("env DATABASE_URL not found"),
 );
 
 const app = new OpenAPIHono();
@@ -17,22 +17,22 @@ route_todos(app, db);
 route_post_todos(app, db);
 
 app.get("/", (c) => {
-	return c.text("Hello, World!");
+  return c.text("Hello, World!");
 });
 
 app.doc("/apidoc", {
-	openapi: "3.0.0",
-	info: {
-		version: "3.0.0",
-		title: "File Templates/openapi/Hono-Zod-OpenAPI",
-	},
+  openapi: "3.0.0",
+  info: {
+    version: "3.0.0",
+    title: "File Templates/openapi/Hono-Zod-OpenAPI",
+  },
 });
 
 app.get(
-	"/swagger",
-	swaggerUI({
-		url: "/apidoc",
-	}),
+  "/swagger",
+  swaggerUI({
+    url: "/apidoc",
+  }),
 );
 
 export default app;
