@@ -16,3 +16,6 @@ target
 
 # Direnv を使う場合。
 /.direnv
+
+# Lefthook を使う場合。
+/.husky
