@@ -1,6 +1,10 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 # GitHub Workflow を用いた CI。
 # .github/workflows の中にある限り、ファイル名は自由。
+# doc: https://docs.github.com/en/actions/writing-workflows/quickstart
+# more samples: https://github.com/actions/starter-workflows/tree/main/ci
+
+# ディレクトリをキャッシュすることも可能。詳しくは ./rust.yml を見ること。
 
 name: CI
 on:
@@ -24,6 +28,7 @@ defaults:
 jobs:
   # <template repeat desc="複数の CI ジョブを指定可能: 各ジョブの環境は分離される" />
   build:
+    name: "Build"
     runs-on: ubuntu-latest
     timeout-minutes: 10 # <template optional />
     defaults: # <template optional />
@@ -39,6 +44,7 @@ jobs:
   # ここでは Biome を使っている。 https://biomejs.dev/ja/recipes/continuous-integration/
   # Eslint も調べたら出てくるはず。
   lint-with-biome:
+    name: "Lint with Biome"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -59,16 +65,3 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun run test:bun
         working-directory: basic-program
-
-  cache-sample:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4 # ここではサンプルとして npm ci を cache する。
-      - uses: actions/cache@v4
-        with:
-          path: |
-            path/to/large-app/node_modules
-          key: node_modules-cache-${{ runner.os }}--${{ hashFiles('path/to/large-app/package-lock.json') }}
-      - run: time npm ci
-        working-directory: path/to/large-app

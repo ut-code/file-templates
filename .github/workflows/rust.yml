@@ -15,7 +15,7 @@ jobs:
       RUSTFLAGS: -D warnings
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/cache@v4
+      - uses: actions/cache@v4 # 生成物をキャッシュして、必要のないビルドを減らしている。
         with:
           path: |
             ~/.cargo
@@ -23,7 +23,6 @@ jobs:
           key: cargo-cache-${{ github.job }}-${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
         # https://github.com/actions-rust-lang/setup-rust-toolchain
       - uses: actions-rust-lang/setup-rust-toolchain@v1
-      - run: cargo build
       - run: cargo build --release
   test:
     runs-on: ubuntu-latest
