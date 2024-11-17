@@ -7,6 +7,7 @@ default: watch
 # Setup
 setup: setup-root setup-basic
 setup-root:
+    bun install --frozen-lockfile
     lefthook install
 
 # Watch

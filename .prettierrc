@@ -1,4 +1,3 @@
-# DETELE COMMENTS
 # Prettier config files (optional).
 # なぜか Helix に JSON 判定されてるけど フォーマットは YAML 。
 # 必須: Pretiter
@@ -6,6 +5,7 @@
 plugins:
   - prettier-plugin-svelte
   - prettier-plugin-astro
+  - prettier-plugin-tailwindcss # sort class names
 overrides:
   - files: "*.svelte"
     options:
