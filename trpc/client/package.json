@@ -1,0 +1,14 @@
+{
+  "name": "^client",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@trpc/client": "^11.1.2"
+  }
+}
