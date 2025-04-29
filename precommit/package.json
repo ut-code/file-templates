@@ -1,0 +1,9 @@
+{
+	"name": "precommit",
+	"devDependencies": {
+		"lefthook": "^1.11.12"
+	},
+	"scripts": {
+		"prepare": "lefthook install"
+	}
+}

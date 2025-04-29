@@ -1,89 +1,35 @@
-注: この README はサンプルの README です。このリポジトリ自体の README は、 [self.README.md](self.README.md) を参照してください。
+(2025-04-30 大幅改定)
 
-<!-- このファイルは好きなように編集してください。以下に一例を示します。 -->
+# テンプレート集
 
-# Project: Template
+各ディレクトリ、テンプレートの再現に必要最低限のファイルが入っています。
+ルートに置かれているファイルや、 `.` で始まるディレクトリはこのリポジトリ用のもので、テンプレートではありません。
 
-各プロジェクトにファイルのテンプレートを提供するプロジェクトです。
+## このテンプレートについて
 
-## 使い方
+同じようなファイルを何回も調べて書くのに疲れましたか？自分もです。
 
-ファイルをコピーし、ファイルに書いてあるように編集します。
+このテンプレート集は、長々しい公式ドキュメントを読まずに、かんたんな設定ファイルをコピペで作成することを目的に作られています。
 
-## 技術スタック
+## 注意
 
-- Frontend
+- すべてが書いてあるわけではありません。高度な設定が必要なら、公式ドキュメントを読みましょう。
+## 目標
 
-  - None
+- 最小限
+  各ファイルは、テンプレートとして機能する必要最小限のサイズであることが好ましい。
 
-- Backend
+## 各ディレクトリのREADME
 
-  - JavaScript
-    - Bun ([Website](https://bun.sh/))
-    - Hono ([Website](https://hono.dev/))
-    - Prisma ([Website](https://www.prisma.io/))
-  - Rust
-    - Cargo
-    - Poem ([GitHub](https://github.com/poem-web/poem))
-    - SQLx ([GitHub](https://github.com/launchbadge/sqlx))
+各ディレクトリの README には、以下のことを書きます。
+一部コメントを許可しないファイル形式 (JSON など) があるので、その場合はコメントを消去してください。
 
-- Database
+- ファイルの目的・用途
+- ドキュメントへの URL (存在する場合)
+- テンプレートのコピー元 (どこかからコピーしてきた場合)
+- 必要なパッケージ (例: `biome.json` -> `必要: Biome`)
+- 推奨するパッケージ (例: `package.json` -> `推奨: nvm`)
 
-  - Postgres ([Website](https://www.postgresql.org/)) on Docker
+## Contribution / Issue
 
-- Infrastructure
-
-  - Nix Flake
-    - Flake Utils ([GitHub](https://github.com/numtide/flake-utils))
-    - Fenix ([GitHub](https://github.com/nix-community/fenix))
-    - Prisma Utils ([GitHub](https://github.com/VanCoding/nix-prisma-utils))
-  - Docker ([Website](https://www.docker.com/ja-jp/))
-    - Docker Compose ([Website](https://docs.docker.com/compose/))
-
-- Development
-  - API Doc: OpenAPI
-  - Task Runner: Just ([GitHub](https://github.com/casey/just))
-  - Precommit: Lefthook ([GitHub](https://github.com/evilmartians/lefthook))
-  - Formatter / Linter: Biome ([Website](https://biomejs.dev/ja/))
-  - Watcher: cargo-watch ([GitHub](https://github.com/watchexec/cargo-watch))
-  - Watcher: Bun `bun --watch`
-
-## 開発
-
-### 環境構築
-
-1. Nix を使う方法
-
-- Nix と direnv をインストールします。
-- このディレクトリで、 `direnv allow` を実行します。
-- Docker をインストールします。
-
-2. それ以外
-
-- 以下のパッケージをインストールしてください。
-
-  - Bun
-  - Biome
-  - Just
-  - lefthook
-  - Docker
-
-- 以下のコマンドを実行してください。
-  - `lefthook install`
-
-### 開発環境で実行 (watch モード)
-
-```sh
-just watch
-```
-
-### デプロイ方法
-
-basic program:
-
-```sh
-# Setup Command
-just build-basic
-# Serve Command
-just serve-basic
-```
+are Welcome.
