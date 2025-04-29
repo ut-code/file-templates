@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+# GitHub Workflow を用いた CI。
+# .github/workflows の中にある限り、ファイル名は自由。
+# doc: https://docs.github.com/en/actions/writing-workflows/quickstart
+
+name: Check
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+env:
+  # このように書くと、 GitHub Secrets の値を環境変数から参照可能: https://docs.github.com/ja/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions
+  # GitHub の設定 > Security > Secrets and variables > Actions からアクセス可能。
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+jobs:
+  # 複数指定可。
+  biome:
+    name: "Biome"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: biome ci
