@@ -5,16 +5,15 @@
 # 関連: Husky (互換: Lefthook のほうが多機能)
 pre-commit:
   parallel: true
-  commands:
-    biome:
+  jobs:
+    # どちらか選択すること。
+    - name: biome
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      # このコードベースではフォーマッタに Prettier を採用しているので `biome lint` しかしていないが、 Biome で format もするなら `biome check` をしてよい。 (biome check = biome lint + biome format)
-      run: biome lint --write --no-errors-on-unmatched --files-ignore-unknown=true -- {staged_files}
+      run: biome check --fix .
       stage_fixed: true
-    # main でコミットできないようにするには、下のコメントアウトを消す。
-    # prevent-commit-on-main:
-    #   run: if [ "`git branch --show-current`" == 'main' ]; then echo 'Cannot make commit on main!'; exit 1; fi
-    prettier:
-      glob: "*"
+
+    - name: prettier
+      # prettier はコードベース全体に適用するには遅いため、
+      # {staged_files} でステージ済みファイルのみに適用する
       run: bunx prettier --write --ignore-unknown -- {staged_files}
       stage_fixed: true
